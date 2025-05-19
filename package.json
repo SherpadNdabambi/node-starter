@@ -1,0 +1,38 @@
+{
+  "author": "Sherpad Ndabambi",
+  "bugs": {
+    "url": "https://github.com/sherpadndabambi/node-starter/issues"
+  },
+  "description": "Starter project for Node.js projects",
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.14.1",
+    "inquirer": "^12.5.2",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.3.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "engines": {
+    "node": ">=20.6.0"
+  },
+  "homepage": "https://github.com/sherpadndabambi/node-starter#readme",
+  "license": "ISC",
+  "main": "index.js",
+  "name": "node-starter",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sherpadndabambi/node-starter.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node --env-file=config.env dist/index.js",
+    "setup": "ts-node assets/ts/setup.ts",
+    "test": "jest"
+  },
+  "version": "1.0.0"
+}
