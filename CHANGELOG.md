@@ -9,7 +9,7 @@ The format is based on [Keep a Changelog][Keep a Changelog url], and this projec
 ### Added
 
 1. .env file to store environment variables.
-1. .gitignore file to ignore files and directories that should not be tracked by Git.
+1. .gitignore file to ignore files and directories that Git should not track
 1. .nvmrc file to specify the Node.js version to use.
 1. app.ts file to define the application logic.
 1. index.ts file to define the entry point of the application.
