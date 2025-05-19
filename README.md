@@ -85,10 +85,15 @@ Make sure you have the following packages installed globally on your machine to 
 
 ### Setting Up
 
-1. Clone the repo.
+1. Download the [latest release][latest release url] of the template.
+
+1. Extract the downloaded file.
+
+1. Rename the extracted folder to your project name.
+
+1. Navigate to the project directory.
 
    ```sh
-   git clone https://github.com/sherpadNdabambi/node-starter.git <your-project-name>
    cd <your-project-name>
    ```
 
@@ -235,6 +240,7 @@ Distributed under the ISC License. See [LICENSE][License url] for more informati
 [jQuery url]: https://jquery.com/
 [Node.js url]: https://nodejs.org/
 [npm url]: https://www.npmjs.com/
+[latest release url]: https://github.com/sherpadNdabambi/node-starter/releases/latest
 [Documentation url]: https://sherpadndabambi.github.io/node-starter/
 [changelog url]: ./CHANGELOG.md
 [Personal website url]: https://sherpadndabambi.github.io/
