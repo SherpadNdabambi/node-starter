@@ -88,8 +88,8 @@ Make sure you have the following packages installed globally on your machine to 
 1. Clone the repo.
 
    ```sh
-   git clone https://github.com/sherpadNdabambi/node-starter.git
-   cd node-starter
+   git clone https://github.com/sherpadNdabambi/node-starter.git <your-project-name>
+   cd <your-project-name>
    ```
 
 1. Install dependencies.
