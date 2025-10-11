@@ -4,6 +4,12 @@ All notable changes to the Node.js project Starter template will be documented i
 
 The format is based on [Keep a Changelog][Keep a Changelog url], and this project adheres to [Semantic Versioning][Semantic Versioning url].
 
+## [1.0.1] (11 October 2025)
+
+### Changed
+
+1. Simplify start script env ref.
+
 ## [1.0.0] (19 May 2025)
 
 ### Added
@@ -26,4 +32,5 @@ The format is based on [Keep a Changelog][Keep a Changelog url], and this projec
 
 [Keep a Changelog url]: https://keepachangelog.com/en/1.0.0/
 [Semantic Versioning url]: https://semver.org/spec/v2.0.0.html
+[1.0.1]: https://github.com/SherpadNdabambi/node-starter/releases/tag/v1.0.1
 [1.0.0]: https://github.com/SherpadNdabambi/node-starter/releases/tag/v1.0.0
