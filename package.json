@@ -30,7 +30,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "start": "npm run build && node --env-file=config.env dist/index.js",
+    "start": "npm run build && node --env-file=.env dist/index.js",
     "setup": "ts-node assets/ts/setup.ts",
     "test": "jest"
   },
