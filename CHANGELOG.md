@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog][Keep a Changelog url], and this projec
 
 ## [2.0.1] (15 October 2025)
 
-## Added
+### Added
 
 1. Re-added ts-node dependency for tests.
 
