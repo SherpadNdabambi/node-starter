@@ -1,107 +1,142 @@
 import { readFile, writeFile } from "fs/promises";
 import inquirer from "inquirer";
 
+async function getCurrentValues() {
+  const pkgStr = await readFile("package.json", "utf8");
+  const pkg = JSON.parse(pkgStr);
+  const currentSlug = pkg.name;
+  const currentAuthor =
+    typeof pkg.author === "string" ? pkg.author : pkg.author?.name || "";
+  const currentDesc = pkg.description || "";
+  const repoMatch = pkg.repository?.url?.match(/github\.com\/([^\/]+)\//);
+  const currentUsername = repoMatch ? repoMatch[1] : "";
+  const readmeStr = await readFile("README.md", "utf8");
+  const emailMatch = readmeStr.match(/mailto:([^&\s]+)/);
+  const currentEmail = emailMatch ? emailMatch[1] : "";
+  const nameMatch = readmeStr.match(/^#\s*(.+?)\s*$/m);
+  const currentProjectName = nameMatch ? nameMatch[1].trim() : "";
+  return {
+    currentSlug,
+    currentAuthor,
+    currentDesc,
+    currentUsername,
+    currentEmail,
+    currentProjectName,
+  };
+}
+
 async function runSetup() {
-  // Prompt user for replacement values
+  const currents = await getCurrentValues();
+
+  // Prompt user for replacement values (with current as defaults for re-runs)
   const answers = await inquirer.prompt([
     {
       type: "input",
       name: "projectName",
       message: "Enter your project name:",
-      default: "My Project",
+      default: currents.currentProjectName || "My Project",
     },
     {
       type: "input",
       name: "projectDescription",
       message: "Enter your project description:",
-      default: "A Node.js project",
+      default: currents.currentDesc || "A Node.js project",
     },
     {
       type: "input",
       name: "projectSlug",
       message: "Enter your project slug (kebab-case, e.g., my-project):",
-      default: "my-project",
+      default: currents.currentSlug || "my-project",
     },
     {
       type: "input",
       name: "authorName",
       message: "Enter your name:",
-      default: "Your Name",
+      default: currents.currentAuthor || "Your Name",
     },
     {
       type: "input",
       name: "githubUsername",
       message: "Enter your GitHub username:",
-      default: "YourGitHubUsername",
+      default: currents.currentUsername || "YourGitHubUsername",
     },
     {
       type: "input",
       name: "email",
       message: "Enter your email address:",
-      default: "your_email@address.com",
+      default: currents.currentEmail || "your_email@address.com",
     },
   ]);
 
   const replacements = [
+    // CHANGELOG.md
     {
       file: "CHANGELOG.md",
-      search: "node-starter",
+      search: currents.currentSlug,
       replace: answers.projectSlug,
     },
     {
       file: "CHANGELOG.md",
-      search: "the Node.js Starter template",
+      search: currents.currentProjectName,
       replace: answers.projectName,
     },
+    {
+      file: "CHANGELOG.md",
+      search: currents.currentUsername,
+      replace: answers.githubUsername,
+    },
+    // LICENSE
     {
       file: "LICENSE",
-      search: "Sherpad Ndabambi",
+      search: currents.currentAuthor,
       replace: answers.authorName,
     },
+    // package.json
     {
       file: "package.json",
-      search: "node-starter",
+      search: currents.currentSlug,
       replace: answers.projectSlug,
     },
     {
       file: "package.json",
-      search: "sherpadNdabambi",
+      search: currents.currentUsername,
       replace: answers.githubUsername,
     },
     {
       file: "package.json",
-      search: "Sherpad Ndabambi",
+      search: currents.currentAuthor,
       replace: answers.authorName,
     },
     {
       file: "package.json",
-      search: "Starter project for Node.js projects",
+      search: currents.currentDesc,
       replace: answers.projectDescription,
     },
+    // README.md
     {
       file: "README.md",
-      search: "Node.js Starter",
+      search: currents.currentProjectName,
       replace: answers.projectName,
     },
     {
       file: "README.md",
-      search: "Starter project for Node.js projects",
+      search: currents.currentDesc,
       replace: answers.projectDescription,
     },
     {
       file: "README.md",
-      search: "node-starter",
+      search: currents.currentSlug,
       replace: answers.projectSlug,
     },
     {
       file: "README.md",
-      search: "sherpadNdabambi",
+      search: currents.currentUsername,
       replace: answers.githubUsername,
     },
     {
       file: "README.md",
-      search: "sgndabambi@gmail.com",
-      replace: answers.email,
+      search: `mailto:${currents.currentEmail}`,
+      replace: `mailto:${answers.email}`,
     },
   ];
 
@@ -109,7 +144,7 @@ async function runSetup() {
   for (const { file, search, replace } of replacements) {
     try {
       const content = await readFile(file, "utf8");
-      const updatedContent = content.replace(new RegExp(search, "g"), replace);
+      const updatedContent = content.replace(new RegExp(search, "gi"), replace);
       await writeFile(file, updatedContent, "utf8");
       console.log(`Updated ${file}`);
     } catch (error) {
@@ -117,10 +152,10 @@ async function runSetup() {
     }
   }
 
-  console.log("Setup complete.");
+  console.log("Project setup complete.");
 }
 
 runSetup().catch((error) => {
-  console.error("Setup failed:", error);
+  console.error("Project setup failed:", error);
   process.exit(1);
 });

@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the Node.js project Starter template will be documented in this file.
+All notable changes to Node.js Starter will be documented in this file.
 
 The format is based on [Keep a Changelog][Keep a Changelog url], and this project adheres to [Semantic Versioning][Semantic Versioning url].
 
