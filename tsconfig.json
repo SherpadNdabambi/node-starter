@@ -1,15 +1,17 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "CommonJS",
-    "outDir": "./dist",
-    "rootDir": "./assets/ts",
-    "strict": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "outDir": "./dist",
     "resolveJsonModule": true,
-    "moduleResolution": "node"
+    "rootDir": "./assets/ts",
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "esnext",
+    "typeRoots": ["./node_modules/@types"],
+    "types": ["jest", "node"]
   },
   "exclude": ["assets/ts/setup.ts", "dist", "node_modules"],
   "include": ["./assets/ts"]
