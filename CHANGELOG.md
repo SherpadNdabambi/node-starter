@@ -4,6 +4,12 @@ All notable changes to Node.js Starter will be documented in this file.
 
 The format is based on [Keep a Changelog][Keep a Changelog url], and this project adheres to [Semantic Versioning][Semantic Versioning url].
 
+## [2.0.1] (15 October 2025)
+
+## Added
+
+1. Re-added ts-node dependency for tests.
+
 ## [2.0.0] (15 October 2025)
 
 ### Added
