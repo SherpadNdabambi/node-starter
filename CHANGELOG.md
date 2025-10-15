@@ -4,6 +4,13 @@ All notable changes to Node.js Starter will be documented in this file.
 
 The format is based on [Keep a Changelog][Keep a Changelog url], and this project adheres to [Semantic Versioning][Semantic Versioning url].
 
+## [2.0.2] (15 October 2025)
+
+### Changed
+
+1. Upgraded Node.js runtime to v24.10.0.
+1. Switched project to ES modules.
+
 ## [2.0.1] (15 October 2025)
 
 ### Added

@@ -35,5 +35,6 @@
     "setup": "tsx assets/ts/setup.ts",
     "test": "jest"
   },
-  "version": "2.0.1"
+  "type": "module",
+  "version": "2.0.2"
 }
