@@ -11,6 +11,6 @@
     "resolveJsonModule": true,
     "moduleResolution": "node"
   },
-  "exclude": ["node_modules", "dist", "assets/ts/setup.ts"],
+  "exclude": ["assets/ts/setup.ts", "dist", "node_modules"],
   "include": ["./assets/ts"]
 }
