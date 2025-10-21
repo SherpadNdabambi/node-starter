@@ -10,7 +10,7 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext",
-    "typeRoots": ["./node_modules/@types"],
+    "typeRoots": ["./node_modules/@types", "./types"],
     "types": ["jest", "node"]
   },
   "exclude": ["assets/ts/setup.ts", "dist", "node_modules"],
