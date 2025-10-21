@@ -4,6 +4,13 @@ All notable changes to Node.js Starter will be documented in this file.
 
 The format is based on [Keep a Changelog][Keep a Changelog url], and this project adheres to [Semantic Versioning][Semantic Versioning url].
 
+## [2.0.4] (21 October 2025)
+
+### Changed
+
+1. Updated setup script: Switche from /gi to /g regex in replacements to avoid case-insensitive overlaps (e.g., "MyApp" matching "myapp" in URLs).
+1. Updated setup script: Added validation to reprompt if project name matches slug exactly, preventing indiscriminate replacements.
+
 ## [2.0.3] (21 October 2025)
 
 ### Changed
@@ -76,6 +83,7 @@ The format is based on [Keep a Changelog][Keep a Changelog url], and this projec
 
 [Keep a Changelog url]: https://keepachangelog.com/en/1.0.0/
 [Semantic Versioning url]: https://semver.org/spec/v2.0.0.html
+[2.0.4]: https://github.com/SherpadNdabambi/node-starter/releases/tag/v2.0.4
 [2.0.3]: https://github.com/SherpadNdabambi/node-starter/releases/tag/v2.0.3
 [2.0.2]: https://github.com/SherpadNdabambi/node-starter/releases/tag/v2.0.2
 [2.0.1]: https://github.com/SherpadNdabambi/node-starter/releases/tag/v2.0.1
