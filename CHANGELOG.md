@@ -4,6 +4,14 @@ All notable changes to Node.js Starter will be documented in this file.
 
 The format is based on [Keep a Changelog][Keep a Changelog url], and this project adheres to [Semantic Versioning][Semantic Versioning url].
 
+## [2.0.3] (21 October 2025)
+
+### Changed
+
+1. Added .env to .gitignore.
+1. Updated README Contact icons.
+1. Updated tsconfig typeRoots.
+
 ## [2.0.2] (15 October 2025)
 
 ### Changed
@@ -68,6 +76,9 @@ The format is based on [Keep a Changelog][Keep a Changelog url], and this projec
 
 [Keep a Changelog url]: https://keepachangelog.com/en/1.0.0/
 [Semantic Versioning url]: https://semver.org/spec/v2.0.0.html
+[2.0.3]: https://github.com/SherpadNdabambi/node-starter/releases/tag/v2.0.3
+[2.0.2]: https://github.com/SherpadNdabambi/node-starter/releases/tag/v2.0.2
+[2.0.1]: https://github.com/SherpadNdabambi/node-starter/releases/tag/v2.0.1
 [2.0.0]: https://github.com/SherpadNdabambi/node-starter/releases/tag/v2.0.0
 [1.0.1]: https://github.com/SherpadNdabambi/node-starter/releases/tag/v1.0.1
 [1.0.0]: https://github.com/SherpadNdabambi/node-starter/releases/tag/v1.0.0
