@@ -175,8 +175,8 @@ See the changelog [here][changelog url].
 
 Sherpad Ndabambi
 
-<span title="Personal website">[<img alt="Website icon" src="./assets/img/website-ui-web-svgrepo-com.svg" style="height: 32px">][Personal website url]</span>
-<span title="Email">[<img alt="Gmail icon" src="./assets/img/gmail-old-svgrepo-com.svg" style="height: 32px">][Email address]<span>
+[![Website icon][Website icon url]][Personal website url]
+[![Gmail icon][Gmail icon url]][Email address]
 
 <div align=right>
 
